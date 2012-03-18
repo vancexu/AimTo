@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+<!--
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="7"
+        />  -->
+    <Button
+		android:id="@+id/aim_remain1"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:padding="10dp"
+	    android:background="@drawable/showdatetext"
+		android:text=""
+		android:focusable="false"
+		 />
+    
+    <CheckedTextView 
+        android:id="@+id/aim_chktext1" 
+	    android:layout_width="0dip"
+	    android:layout_height="wrap_content"
+		android:paddingLeft="6dip" 
+		android:paddingRight="6dip" 
+		android:gravity="center_vertical" 
+		android:checked="false"
+	    android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+	    android:layout_weight="1"
+    />
+    
+</LinearLayout>

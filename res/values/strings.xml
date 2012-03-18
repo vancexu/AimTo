@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, AimToActivity!</string>
+    <string name="app_name">AimTo</string>
+    
+    <string name="task_no_task">No task yet. Add one now!</string>
+    <string name="task_title">Fighting</string>
+    <string name="task_menu_insert">Add Task</string>
+    <string name="task_menu_delete">Delete Task</string>
+    <string name="task_menu_edit">Edit task</string>
+    <string name="task_edit_title">Title</string>
+    <string name="task_edit_body">Title</string>
+    
+    <string name="aim_no_aim">No aim yet. Set up your goal now!</string>
+    <string name="aim_title">Fighting</string>
+    <string name="aim_menu_insert">Add Aim</string>
+    <string name="aim_menu_delete">Delete Aim</string>
+    <string name="aim_menu_edit">Edit Aim</string>
+    <string name="aim_menu_watch">Check Content</string>
+    <string name="aim_edit_title">Title</string>
+    <string name="aim_edit_body">Body</string>
+    
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="edit_task">Edit Task</string>
+    <string name="edit_aim">Edit Aim</string>
+
+</resources>

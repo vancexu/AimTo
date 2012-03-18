@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/aim_title_watch"
+        android:layout_width="match_parent"
+        android:layout_height="60px"
+        android:background="#58ACFA"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="TITLE"
+        android:textSize="45px" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45px"
+        android:background="#F8E0F7"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/aim_targetdate_watch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text=""
+            android:gravity="center_vertical"
+            android:padding="10px" />
+
+        <TextView
+            android:id="@+id/aim_daysremain_watch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:text=""
+            android:padding="10px" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/aim_body_watch"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:padding="10px"
+        android:scrollbars="vertical"
+        android:text=""
+        android:textSize="20px"
+        android:textColor="#000000"
+        android:background="#FFFFFF"
+         />
+
+</LinearLayout>
