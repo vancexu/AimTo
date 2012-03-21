@@ -10,7 +10,8 @@
     <string name="task_menu_delete">Delete Task</string>
     <string name="task_menu_edit">Edit task</string>
     <string name="task_edit_title">Title</string>
-    <string name="task_edit_body">Title</string>
+    <string name="task_edit_body">Body</string>
+    <string name="task_edittext_hint">Add a task</string>
     
     <string name="aim_no_aim">No aim yet. Set up your goal now!</string>
     <string name="aim_title">Fighting</string>
@@ -25,5 +26,10 @@
     <string name="cancel">Cancel</string>
     <string name="edit_task">Edit Task</string>
     <string name="edit_aim">Edit Aim</string>
+    
+    <string name="header_adage1">Go for success</string>
+    <string name="header_adage2">Don\'t waste time</string>
+    <string name="header_adage3">Focus on goals</string>
+    <string name="header_adage4">Fight for dreams</string>
 
 </resources>

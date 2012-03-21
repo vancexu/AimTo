@@ -4,6 +4,7 @@ package com.hackingtrace.vancexu.task;
 import com.hackingtrace.vancexu.R;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,8 @@ public class TaskEdit extends Activity {
     private EditText mBodyText;
     private Long mRowId;
     private TasksDbAdapter mDbHelper;
+    
+    private static final int ACTIVITY_EDIT_TIME=0;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +32,7 @@ public class TaskEdit extends Activity {
         mBodyText = (EditText) findViewById(R.id.body);
 
         Button confirmButton = (Button) findViewById(R.id.confirm);
-        Button cancelButton = (Button) findViewById(R.id.cancel);
+        Button setTimeButton = (Button) findViewById(R.id.task_edit_set_time);
 
         mRowId = (savedInstanceState == null) ? null :
             (Long) savedInstanceState.getSerializable(TasksDbAdapter.KEY_ROWID);
@@ -50,13 +53,23 @@ public class TaskEdit extends Activity {
 
         });
         
-        cancelButton.setOnClickListener(new View.OnClickListener() {
+        /*cancelButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
                 //setResult(RESULT_CANCELED);
                 finish();
             }
 
+        });*/
+        setTimeButton.setOnClickListener(new View.OnClickListener() {
+        	
+        	public void onClick(View view) {
+        		Intent i = new Intent(view.getContext(), TaskTimeSet.class);
+            	i.putExtra(TasksDbAdapter.KEY_ROWID, mRowId);
+            	i.putExtra("date", "2012-03-21");
+            	startActivityForResult(i, ACTIVITY_EDIT_TIME);
+        	}
+        	
         });
     }
     
@@ -102,5 +115,9 @@ public class TaskEdit extends Activity {
         } else {
             mDbHelper.updateTask(mRowId, title, body, "false");
         }
+    }
+    
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        super.onActivityResult(requestCode, resultCode, intent);
     }
 }

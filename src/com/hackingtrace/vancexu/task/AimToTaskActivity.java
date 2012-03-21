@@ -98,7 +98,6 @@ public class AimToTaskActivity extends ListActivity {
                         }
                     };
         tasks.setViewBinder(mViewBinder);
-        //tasks.notifyDataSetChanged();
         
         setListAdapter(tasks);
     }
@@ -160,10 +159,10 @@ public class AimToTaskActivity extends ListActivity {
         CheckedTextView ctv = (CheckedTextView)v;
         ctv.toggle();
         if(ctv.isChecked()){
-        	ctv.setTextColor(Color.GRAY);
+        	ctv.setTextColor(getResources().getColor(R.color.task_list_done));
         	state = "true";	
         }else {
-        	ctv.setTextColor(Color.WHITE);
+        	ctv.setTextColor(getResources().getColor(R.color.task_list_normal));
         	state = "false";
         }
         Long mRowId = id;

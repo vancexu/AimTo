@@ -121,10 +121,10 @@ public class AimToAimActivity extends ListActivity {
 		CheckedTextView ctv = (CheckedTextView) v.findViewById(R.id.aim_chktext1);
 		ctv.toggle();
 		if (ctv.isChecked()) {
-			ctv.setTextColor(Color.GRAY);
+			ctv.setTextColor(getResources().getColor(R.color.task_list_done));
 			state = "true";
 		} else {
-			ctv.setTextColor(Color.WHITE);
+			ctv.setTextColor(getResources().getColor(R.color.task_list_normal));
 			state = "false";
 		}
 		Long mRowId = id;

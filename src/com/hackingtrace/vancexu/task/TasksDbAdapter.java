@@ -12,6 +12,7 @@ public class TasksDbAdapter {
 	public static final String KEY_TITLE = "title";
     public static final String KEY_BODY = "body";
     public static final String KEY_STATE = "state";
+    public static final String KEY_TIME = "time";  //alarm time 
     public static final String KEY_ROWID = "_id";
 
     private static final String TAG = "TasksDbAdapter";
@@ -20,9 +21,9 @@ public class TasksDbAdapter {
     
     private static final String DATABASE_CREATE =
             "create table tasks (_id integer primary key autoincrement, "
-            + "title text not null, body text not null, state text not null);";
+            + "title text not null, body text not null, state text not null, time text);";
 
-    private static final String DATABASE_NAME = "data";
+    private static final String DATABASE_NAME = "task_data";
     private static final String DATABASE_TABLE = "tasks";
     private static final int DATABASE_VERSION = 2;
 
