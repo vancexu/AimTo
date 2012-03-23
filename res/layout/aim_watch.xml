@@ -7,11 +7,11 @@
     <TextView
         android:id="@+id/aim_title_watch"
         android:layout_width="match_parent"
-        android:layout_height="60px"
-        android:background="#58ACFA"
+        android:layout_height="60dp"
+        android:background="@drawable/head_bg"
         android:gravity="center_vertical|center_horizontal"
         android:text="TITLE"
-        android:textSize="45px" />
+        android:textSize="35sp" />
 
     <RelativeLayout
         android:layout_width="match_parent"

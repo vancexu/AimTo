@@ -37,7 +37,7 @@ public class AimEdit extends Activity {
 		try {
 			mDatePicker = (DatePicker) findViewById(R.id.aim_edit_datePicker);
 		} catch (ClassCastException e) {
-			Log.d(TAG, "mDatePicker exception");
+			Log.e(TAG, "mDatePicker exception");
 		}
 
 		Button confirmButton = (Button) findViewById(R.id.confirm);

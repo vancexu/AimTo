@@ -43,6 +43,13 @@
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:text="Set Time" />
+		
+		<TextView 
+		    android:id="@+id/task_edit_showtimeset"
+		    android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:text="" 
+			android:padding="10dp" />
 
 	</LinearLayout>
 

@@ -17,7 +17,7 @@ public class CalendarAdapter extends BaseAdapter {
 
 	private Context mContext;
 
-	private java.util.Calendar month;
+	private Calendar month;
 	private Calendar selectedDate;
 	private ArrayList<String> items;
 

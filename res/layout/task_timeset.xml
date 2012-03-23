@@ -78,7 +78,8 @@
         android:horizontalSpacing="0dp"
         android:numColumns="7"
         android:stretchMode="columnWidth"
-        android:verticalSpacing="0dp" />
+        android:verticalSpacing="0dp"
+        android:paddingBottom="0px" />
 
     <GridView
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -89,11 +90,32 @@
         android:horizontalSpacing="0dp"
         android:numColumns="7"
         android:stretchMode="columnWidth"
-        android:verticalSpacing="0dp" />
+        android:verticalSpacing="0dp"
+        android:paddingTop="0px" />
 
     <TimePicker
         android:id="@+id/task_timeset_timePicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <LinearLayout 
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="right" >
+
+        <Button
+            android:id="@+id/task_timeset_confirm_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirm" />
+        
+        <Button
+            android:id="@+id/task_timeset_cancel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel" />
+    </LinearLayout>
 
 </LinearLayout>

@@ -35,8 +35,9 @@ public final class R {
         public static final int tab_text_selector=0x7f02000f;
         public static final int task_timeset_header_background=0x7f020010;
         public static final int task_timeset_item_background=0x7f020011;
-        public static final int task_timeset_item_background_focused=0x7f020012;
-        public static final int task_timeset_list_item_background=0x7f020013;
+        public static final int task_timeset_item_background_clicked=0x7f020012;
+        public static final int task_timeset_item_background_focused=0x7f020013;
+        public static final int task_timeset_list_item_background=0x7f020014;
     }
     public static final class id {
         public static final int ScrollView=0x7f060000;
@@ -54,19 +55,23 @@ public final class R {
         public static final int head_flipper=0x7f06000b;
         public static final int tabsLayout=0x7f06000c;
         public static final int tabsText=0x7f06000d;
-        public static final int task_addbar=0x7f060011;
-        public static final int task_addbutton=0x7f060013;
+        public static final int task_addbar=0x7f060012;
+        public static final int task_addbutton=0x7f060014;
         public static final int task_edit_set_time=0x7f060010;
-        public static final int task_edittext=0x7f060012;
-        public static final int task_text1=0x7f060014;
-        public static final int task_timeset_date=0x7f06001c;
-        public static final int task_timeset_gridview=0x7f06001a;
-        public static final int task_timeset_gridview_head=0x7f060019;
-        public static final int task_timeset_header=0x7f060015;
-        public static final int task_timeset_next=0x7f060018;
-        public static final int task_timeset_previous=0x7f060016;
-        public static final int task_timeset_timePicker=0x7f06001b;
-        public static final int task_timeset_title=0x7f060017;
+        public static final int task_edit_showtimeset=0x7f060011;
+        public static final int task_edittext=0x7f060013;
+        public static final int task_text1=0x7f060015;
+        public static final int task_timeset_calendar_item=0x7f06001f;
+        public static final int task_timeset_cancel_btn=0x7f06001e;
+        public static final int task_timeset_confirm_btn=0x7f06001d;
+        public static final int task_timeset_date=0x7f060020;
+        public static final int task_timeset_gridview=0x7f06001b;
+        public static final int task_timeset_gridview_head=0x7f06001a;
+        public static final int task_timeset_header=0x7f060016;
+        public static final int task_timeset_next=0x7f060019;
+        public static final int task_timeset_previous=0x7f060017;
+        public static final int task_timeset_timePicker=0x7f06001c;
+        public static final int task_timeset_title=0x7f060018;
         public static final int title=0x7f06000e;
     }
     public static final class layout {
