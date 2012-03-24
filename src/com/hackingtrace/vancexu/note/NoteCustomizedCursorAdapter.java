@@ -39,7 +39,7 @@ public class NoteCustomizedCursorAdapter extends CursorAdapter {
 //		SpannableString text = new SpannableString(sTime+sBody);
 //		text.setSpan(new , start, end, flags)
 		body.setText(Html.fromHtml("<b>"+sTime+"</b>"+" "+sBody));
-		Log.d(TAG, "Im in bindView"+title.getText());
+//		Log.d(TAG, "Im in bindView"+title.getText());
 	}
 
 	@Override
@@ -62,7 +62,7 @@ public class NoteCustomizedCursorAdapter extends CursorAdapter {
 //		SpannableString text = new SpannableString(sTime+sBody);
 //		text.setSpan(new , start, end, flags)
 		body.setText(Html.fromHtml("<b>"+sTime+"</b>"+" "+sBody));
-		Log.d(TAG,"Im in newView"+title.getText());
+//		Log.d(TAG,"Im in newView"+title.getText());
 
 		return view;
 	}

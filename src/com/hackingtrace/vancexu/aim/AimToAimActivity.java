@@ -8,6 +8,7 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -123,9 +124,11 @@ public class AimToAimActivity extends ListActivity {
 		ctv.toggle();
 		if (ctv.isChecked()) {
 			ctv.setTextColor(getResources().getColor(R.color.task_list_done));
+			ctv.setPaintFlags(ctv.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 			state = "true";
 		} else {
 			ctv.setTextColor(getResources().getColor(R.color.task_list_normal));
+			ctv.setPaintFlags(ctv.getPaintFlags() & (~ Paint.STRIKE_THRU_TEXT_FLAG));
 			state = "false";
 		}
 		Long mRowId = id;

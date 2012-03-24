@@ -8,6 +8,7 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -89,6 +90,7 @@ public class AimToTaskActivity extends ListActivity {
                             	 CheckedTextView ctw = (CheckedTextView)view;
                             	 ctw.setChecked(true);
                             	 ctw.setTextColor(Color.GRAY);
+                            	 ctw.setPaintFlags(ctw.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
                             	 //Log.d("ISCHECKED","?true");
                              }
 
@@ -160,9 +162,11 @@ public class AimToTaskActivity extends ListActivity {
         ctv.toggle();
         if(ctv.isChecked()){
         	ctv.setTextColor(getResources().getColor(R.color.task_list_done));
+        	ctv.setPaintFlags(ctv.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         	state = "true";	
         }else {
         	ctv.setTextColor(getResources().getColor(R.color.task_list_normal));
+        	ctv.setPaintFlags(ctv.getPaintFlags() & (~ Paint.STRIKE_THRU_TEXT_FLAG));
         	state = "false";
         }
         Long mRowId = id;
