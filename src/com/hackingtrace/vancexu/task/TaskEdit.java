@@ -24,6 +24,7 @@ public class TaskEdit extends Activity {
 	private EditText mBodyText;
 	private Long mRowId;
 	private TasksDbAdapter mDbHelper;
+	private String mAlarmTime;
 
 	private static final int ACTIVITY_EDIT_TIME = 0;
 	private static final int ACTIVITY_CONFIRM_ALARM_TIME = 2;
@@ -33,9 +34,10 @@ public class TaskEdit extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.task_edit);
 		setTitle(R.string.edit_task);
-		
+
 		Log.d(TAG, "on edit creat");
-		
+		mAlarmTime = "no alarm set";
+
 		mDbHelper = new TasksDbAdapter(this);
 		mDbHelper.open();
 
@@ -59,20 +61,32 @@ public class TaskEdit extends Activity {
 		confirmButton.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View view) {
-				setResult(RESULT_OK);
+				Bundle bundle = new Bundle();
+				bundle.putString(TasksDbAdapter.KEY_TITLE, mTitleText.getText()
+						.toString());
+				bundle.putString(TasksDbAdapter.KEY_BODY, mBodyText.getText()
+						.toString());
+				bundle.putString(TasksDbAdapter.KEY_TIME, mAlarmTime);
+				if (mRowId != null) {
+					bundle.putLong(TasksDbAdapter.KEY_ROWID, mRowId);
+				}
+
+				Intent mIntent = new Intent();
+				mIntent.putExtras(bundle);
+				setResult(RESULT_OK, mIntent);
 				finish();
 			}
-
 		});
 
 		/*
 		 * cancelButton.setOnClickListener(new View.OnClickListener() {
 		 * 
-		 * public void onClick(View view) { //setResult(RESULT_CANCELED);
-		 * finish(); }
+		 * public void onClick(View view) { Intent mIntent = new Intent();
+		 * setResult(RESULT_CANCELED, mIntent); finish(); }
 		 * 
 		 * });
 		 */
+
 		setTimeButton.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View view) {
@@ -87,8 +101,8 @@ public class TaskEdit extends Activity {
 				// Log.d(TAG, s); 2012-3-22 09:47:52
 				// Log.d(TAG, s);
 				i.putExtra("date", now);
-//				i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//				i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				// i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				// i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivityForResult(i, ACTIVITY_EDIT_TIME);
 			}
 
@@ -116,7 +130,7 @@ public class TaskEdit extends Activity {
 	@Override
 	protected void onPause() {
 		super.onPause();
-		saveState();
+		// saveState();
 	}
 
 	@Override
@@ -147,15 +161,15 @@ public class TaskEdit extends Activity {
 			if (resultCode == RESULT_OK) {
 				Log.d(TAG, "OK time set");
 				String[] dateArr = intent.getStringExtra("date").split("-");
-//				Log.d(TAG, dateArr[0]);
+				// Log.d(TAG, dateArr[0]);
 				String[] timeArr = intent.getStringExtra("time").split(":");
 				int year = Integer.parseInt(dateArr[0]);
-				int month = Integer.parseInt(dateArr[1]) - 1;  //!!! -1  !!!
+				int month = Integer.parseInt(dateArr[1]) - 1; // !!! -1 !!!
 				int day = Integer.parseInt(dateArr[2]);
 				int hour = Integer.parseInt(timeArr[0]);
 				int minute = Integer.parseInt(timeArr[1]);
-//				Log.d(TAG, ""+year+month+day+hour+minute);
-				
+				// Log.d(TAG, ""+year+month+day+hour+minute);
+
 				Calendar c = Calendar.getInstance();
 				c.set(year, month, day, hour, minute, 0);
 				Intent i = new Intent(TaskEdit.this, TaskAlarmReceiver.class);
@@ -166,12 +180,12 @@ public class TaskEdit extends Activity {
 				am.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(),
 						pendingIntent);
 				TextView showTimeSet = (TextView) findViewById(R.id.task_edit_showtimeset);
-//				String s = c.toString();
+				// String s = c.toString();
 				Date d = c.getTime();
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm");
-				String s = sdf.format(d);
-//				Log.d(TAG, s);
-				showTimeSet.setText("Alarm you set: "+s); 
+				mAlarmTime = sdf.format(d);
+				// Log.d(TAG, s);
+				showTimeSet.setText("Alarm you set: " + mAlarmTime);
 			}
 		}
 	}

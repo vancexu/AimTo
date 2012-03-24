@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/ScrollView"
+    android:id="@+id/note_edit_scrollView"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/edit_bg"
@@ -20,10 +20,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/aim_edit_title" />
+                android:text="@string/note_edit_title" />
 
             <EditText
-                android:id="@+id/aim_edit_title"
+                android:id="@+id/note_edit_title"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -33,10 +33,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/aim_edit_body" />
+            android:text="@string/note_edit_body" />
 
         <EditText
-            android:id="@+id/aim_edit_body"
+            android:id="@+id/note_edit_body"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -45,25 +45,27 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Date" />
+            android:text="State today" />
 
-        <DatePicker
-            android:id="@+id/aim_edit_datePicker"
+        <RatingBar
+            android:id="@+id/note_edit_ratingbar"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="1.0" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 
             <Button
-                android:id="@+id/aim_edit_confirm"
+                android:id="@+id/note_edit_confirm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/confirm" />
 
             <Button
-                android:id="@+id/aim_edit_cancel"
+                android:id="@+id/note_edit_cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/cancel" />

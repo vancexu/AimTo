@@ -175,6 +175,31 @@ public class AimToTaskActivity extends ListActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
         super.onActivityResult(requestCode, resultCode, intent);
-        fillData();
+        
+        if (requestCode == ACTIVITY_CREATE) {
+        	if(resultCode == RESULT_OK) {
+        		Bundle extras = intent.getExtras();
+        		String title = extras.getString(TasksDbAdapter.KEY_TITLE);
+            	String body = extras.getString(TasksDbAdapter.KEY_BODY);
+            	String time = extras.getString(TasksDbAdapter.KEY_TIME);
+            	mDbHelper.createTask(title, body, "false", time);
+        	}
+        	if(resultCode == RESULT_CANCELED){
+        		
+        	}
+        }
+        if (requestCode == ACTIVITY_EDIT) {
+        	if(resultCode == RESULT_OK) {
+        		Bundle extras = intent.getExtras();
+	        	Long mRowId = extras.getLong(TasksDbAdapter.KEY_ROWID);
+	        	if (mRowId != null) {
+	        		String editTitle = extras.getString(TasksDbAdapter.KEY_TITLE);
+	        		String editBody = extras.getString(TasksDbAdapter.KEY_BODY);
+	        		String editTime = extras.getString(TasksDbAdapter.KEY_TIME);
+	        		mDbHelper.updateTask(mRowId, editTitle, editBody, editTime);
+	        	}
+        	}
+        }
+        fillData();	
     }
 }

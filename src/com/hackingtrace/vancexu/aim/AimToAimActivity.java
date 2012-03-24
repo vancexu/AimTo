@@ -2,6 +2,7 @@ package com.hackingtrace.vancexu.aim;
 
 
 import com.hackingtrace.vancexu.R;
+import com.hackingtrace.vancexu.task.TasksDbAdapter;
 
 import android.app.ListActivity;
 import android.content.Intent;
@@ -138,6 +139,31 @@ public class AimToAimActivity extends ListActivity {
 	protected void onActivityResult(int requestCode, int resultCode,
 			Intent intent) {
 		super.onActivityResult(requestCode, resultCode, intent);
-		fillData();
+		
+		if (requestCode == ACTIVITY_CREATE) {
+        	if(resultCode == RESULT_OK) {
+        		Bundle extras = intent.getExtras();
+        		String title = extras.getString(AimsDbAdapter.KEY_TITLE);
+            	String body = extras.getString(AimsDbAdapter.KEY_BODY);
+            	String time = extras.getString(AimsDbAdapter.KEY_DATE);
+            	mDbHelper.createAim(title, body, "false", time);
+        	}
+        	if(resultCode == RESULT_CANCELED){
+        		
+        	}
+        }
+        if (requestCode == ACTIVITY_EDIT) {
+        	if(resultCode == RESULT_OK) {
+        		Bundle extras = intent.getExtras();
+	        	Long mRowId = extras.getLong(AimsDbAdapter.KEY_ROWID);
+	        	if (mRowId != null) {
+	        		String editTitle = extras.getString(AimsDbAdapter.KEY_TITLE);
+	        		String editBody = extras.getString(AimsDbAdapter.KEY_BODY);
+	        		String editTime = extras.getString(AimsDbAdapter.KEY_DATE);
+	        		mDbHelper.updateAim(mRowId, editTitle, editBody, "false", editTime);
+	        	}
+        	}
+        }
+        fillData();	
 	}
 }

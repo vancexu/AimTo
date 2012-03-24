@@ -24,14 +24,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="ActivityOne"></activity>
+        
         <activity android:name="com.hackingtrace.vancexu.task.AimToTaskActivity"></activity>
         	<activity android:name="com.hackingtrace.vancexu.task.TaskEdit" />
         	<activity android:name="com.hackingtrace.vancexu.task.TaskTimeSet" />
         	<service android:name="com.hackingtrace.vancexu.task.TaskNotification" />
+        	
         <activity android:name="com.hackingtrace.vancexu.aim.AimToAimActivity"></activity>
         	<activity android:name="com.hackingtrace.vancexu.aim.AimEdit" />
         	<activity android:name="com.hackingtrace.vancexu.aim.AimWatch" />
+        	
+        <activity android:name="com.hackingtrace.vancexu.note.AimToNoteActivity"></activity>
+        	<activity android:name="com.hackingtrace.vancexu.note.NoteEdit" />
+        	<activity android:name="com.hackingtrace.vancexu.note.NoteWatch" />
+        	
         <activity android:name="com.hackingtrace.vancexu.chart.ChartActivity"></activity>
     </application>
 

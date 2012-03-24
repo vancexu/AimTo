@@ -5,6 +5,7 @@ import java.util.Calendar;
 import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -71,6 +72,7 @@ public class AimCustomizedCursorAdapter extends CursorAdapter{
 		if (state.equals("true")) {
 			chkText.setChecked(true);
 			chkText.setTextColor(Color.GRAY);
+			chkText.setPaintFlags(chkText.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 		}
 		
 		dayRemains.setText(Integer.toString(diff));

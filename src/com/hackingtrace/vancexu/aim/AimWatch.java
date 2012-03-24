@@ -27,9 +27,9 @@ public class AimWatch extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.aim_watch);
 		mTitle = (TextView) findViewById(R.id.aim_title_watch);
-		mTarget = (TextView) findViewById(R.id.aim_targetdate_watch);
-		mRemain = (TextView) findViewById(R.id.aim_daysremain_watch);
-		mBody = (TextView) findViewById(R.id.aim_body_watch);
+		mTarget = (TextView) findViewById(R.id.aim_watch_targetdate);
+		mRemain = (TextView) findViewById(R.id.aim_watch_daysremain);
+		mBody = (TextView) findViewById(R.id.aim_watch_body);
 		mBody.setMovementMethod(new ScrollingMovementMethod());
 
 		mDbHelper = new AimsDbAdapter(this);

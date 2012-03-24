@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.hackingtrace.vancexu.aim.AimToAimActivity;
 import com.hackingtrace.vancexu.chart.ChartActivity;
+import com.hackingtrace.vancexu.note.AimToNoteActivity;
 import com.hackingtrace.vancexu.task.AimToTaskActivity;
 
 public class AimToActivity extends TabActivity {
@@ -39,6 +40,8 @@ public class AimToActivity extends TabActivity {
 		setupTab(new TextView(this), "Aim", i);
 		i = new Intent().setClass(this, AimToTaskActivity.class);
 		setupTab(new TextView(this), "Task", i);
+		i = new Intent().setClass(this, AimToNoteActivity.class);
+		setupTab(new TextView(this), "Note", i);
 		i = new Intent().setClass(this, ChartActivity.class);
 		setupTab(new TextView(this), "Chart", i);
 	}

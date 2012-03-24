@@ -22,10 +22,19 @@
     <string name="aim_edit_title">Title</string>
     <string name="aim_edit_body">Body</string>
     
+    <string name="note_no_note">No note yet.</string>
+    <string name="note_menu_insert">Add Note</string>
+    <string name="note_menu_delete">Delete Note</string>
+    <string name="note_menu_edit">Edit Note</string>
+    <string name="note_menu_watch">Check Content</string>
+    <string name="note_edit_title">Title</string>
+    <string name="note_edit_body">Body</string>
+    
     <string name="confirm">Confirm</string>
     <string name="cancel">Cancel</string>
     <string name="edit_task">Edit Task</string>
     <string name="edit_aim">Edit Aim</string>
+    <string name="edit_note">Edit Note</string>
     
     <string name="header_adage1">Go for success</string>
     <string name="header_adage2">Don\'t waste time</string>

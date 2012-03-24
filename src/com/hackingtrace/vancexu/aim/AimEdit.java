@@ -3,8 +3,10 @@ package com.hackingtrace.vancexu.aim;
 import java.util.Calendar;
 
 import com.hackingtrace.vancexu.R;
+import com.hackingtrace.vancexu.task.TasksDbAdapter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
@@ -40,8 +42,8 @@ public class AimEdit extends Activity {
 			Log.e(TAG, "mDatePicker exception");
 		}
 
-		Button confirmButton = (Button) findViewById(R.id.confirm);
-//		Button cancelButton = (Button) findViewById(R.id.cancel);
+		Button confirmButton = (Button) findViewById(R.id.aim_edit_confirm);
+		Button cancelButton = (Button) findViewById(R.id.aim_edit_cancel);
 
 		mRowId = (savedInstanceState == null) ? null
 				: (Long) savedInstanceState
@@ -57,20 +59,37 @@ public class AimEdit extends Activity {
 		confirmButton.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View view) {
-				setResult(RESULT_OK);
+				Bundle bundle = new Bundle();
+				bundle.putString(AimsDbAdapter.KEY_TITLE, mTitleText.getText()
+						.toString());
+				bundle.putString(AimsDbAdapter.KEY_BODY, mBodyText.getText()
+						.toString());
+				int d = mDatePicker.getDayOfMonth();
+				int m = mDatePicker.getMonth() + 1;
+				int y = mDatePicker.getYear();
+				mDate = Integer.toString(y) + "-" + Integer.toString(m) + "-"
+						+ Integer.toString(d);
+				bundle.putString(AimsDbAdapter.KEY_DATE, mDate);
+				if (mRowId != null) {
+					bundle.putLong(AimsDbAdapter.KEY_ROWID, mRowId);
+				}
+
+				Intent mIntent = new Intent();
+				mIntent.putExtras(bundle);
+				setResult(RESULT_OK, mIntent);
 				finish();
 			}
 
 		});
 
-		/*cancelButton.setOnClickListener(new View.OnClickListener() {
+		cancelButton.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View view) {
-				// setResult(RESULT_CANCELED);
+				setResult(RESULT_CANCELED);
 				finish();
 			}
 
-		});*/
+		});
 
 		dateSetListener = new DatePicker.OnDateChangedListener() {
 			public void onDateChanged(DatePicker view, int year,
@@ -110,7 +129,7 @@ public class AimEdit extends Activity {
 	@Override
 	protected void onPause() {
 		super.onPause();
-		saveState();
+//		saveState();
 	}
 
 	@Override

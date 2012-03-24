@@ -5,7 +5,7 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/aim_title_watch"
+        android:id="@+id/note_watch_title"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/head_bg"
@@ -14,32 +14,23 @@
         android:textColor="@color/silver"
         android:textSize="26sp" />
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:background="#F8E0F7"
         android:orientation="horizontal" >
 
         <TextView
-            android:id="@+id/aim_watch_targetdate"
+            android:id="@+id/note_watch_time"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:padding="10px"
             android:text="" />
-
-        <TextView
-            android:id="@+id/aim_watch_daysremain"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentRight="true"
-            android:gravity="center_vertical"
-            android:padding="10px"
-            android:text="" />
-    </RelativeLayout>
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/aim_watch_body"
+        android:id="@+id/note_watch_body"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:background="#FFFFFF"
