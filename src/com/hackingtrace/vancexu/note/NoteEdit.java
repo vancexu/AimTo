@@ -84,7 +84,7 @@ public class NoteEdit extends Activity {
 
 		});
 		
-		mRating = (float) 0.0;
+		mRating = (float) 0.0;	//default state 0
 		mRatingbar.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
 		    public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
 		    	mRating = rating;

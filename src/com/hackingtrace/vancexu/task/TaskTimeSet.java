@@ -125,11 +125,11 @@ public class TaskTimeSet extends Activity {
 				// TODO Auto-generated method stub
 				Intent intent = new Intent();
 				intent.putExtra("date", resultDate);
-				Log.d(TAG, resultDate);
+//				Log.d(TAG, resultDate);
 				int h = timePicker.getCurrentHour();
 				int m = timePicker.getCurrentMinute();
 				String time = "" + h + ":" + m;
-				Log.d(TAG, time);
+//				Log.d(TAG, time);
 				intent.putExtra("time", time);
 
 				if (getParent() == null) {

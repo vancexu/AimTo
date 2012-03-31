@@ -17,7 +17,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:background="#F8E0F7"
+        android:background="@color/pink"
         android:orientation="horizontal" >
 
         <TextView
