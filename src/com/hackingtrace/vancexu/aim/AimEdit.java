@@ -98,7 +98,7 @@ public class AimEdit extends Activity {
 		};
 		
 		Calendar c = Calendar.getInstance();
-		mDatePicker.init(c.get(Calendar.YEAR), c.get(Calendar.MONTH)+1, c.get(Calendar.DAY_OF_MONTH), dateSetListener);
+		mDatePicker.init(c.get(Calendar.YEAR), c.get(Calendar.MONTH) + 1, c.get(Calendar.DAY_OF_MONTH), dateSetListener);
 	}
 
 	private void populateFields() {
@@ -116,6 +116,7 @@ public class AimEdit extends Activity {
 			int m = Integer.parseInt(dates[1]) - 1;
 			int d = Integer.parseInt(dates[2]);
 			mDatePicker.init(y, m, d, dateSetListener);
+			Log.d(TAG+"pop", ""+y+m+d);
 		}
 	}
 
@@ -146,7 +147,7 @@ public class AimEdit extends Activity {
 		int y = mDatePicker.getYear();
 		mDate = Integer.toString(y) + "-" + Integer.toString(m) + "-"
 				+ Integer.toString(d);
-//		Log.d(TAG, mDate);
+		Log.d(TAG, mDate);
 
 		if (mRowId == null) {
 			long id = mDbHelper.createAim(title, body, "false", mDate);

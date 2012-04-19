@@ -39,6 +39,10 @@
         	<activity android:name="com.hackingtrace.vancexu.note.NoteWatch" />
         	
         <activity android:name="com.hackingtrace.vancexu.chart.ChartActivity"></activity>
+        
+        <activity android:name="com.hackingtrace.vancexu.help.AimToHelpActivity"
+                  android:configChanges="orientation|keyboardHidden">
+        </activity>
     </application>
 
 </manifest>

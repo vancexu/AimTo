@@ -23,9 +23,9 @@ public class AimToHelpActivity extends Activity implements OnViewChangeListener,
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);        
+        setContentView(R.layout.help_main);        
         init();
-        Log.v("@@@@@@", "this is in  SwitchViewDemoActivity onClick()");
+//        Log.v("@@@@@@", "this is in  SwitchViewDemoActivity onClick()");
     }
     
     private void init()
@@ -43,7 +43,7 @@ public class AimToHelpActivity extends Activity implements OnViewChangeListener,
     	mCurSel = 0;
     	mImageViews[mCurSel].setEnabled(false);    	
     	mScrollLayout.SetOnViewChangeListener(this);
-    	Log.v("@@@@@@", "this is in  SwitchViewDemoActivity init()");
+//    	Log.v("@@@@@@", "this is in  SwitchViewDemoActivity init()");
     }
 
     private void setCurPoint(int index)

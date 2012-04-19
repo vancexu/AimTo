@@ -8,46 +8,86 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical" >
-
-        <ViewFlipper
-	        android:id="@+id/head_flipper"
-	        android:background="@drawable/head_bg"
+        
+	    <LinearLayout
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
-	        android:flipInterval="5000" >
-	
-	        <TextView
-	            android:layout_width="fill_parent"
+	        android:orientation="horizontal" 
+	        android:background="@drawable/head_bg" >
+	        
+	        <ImageButton 
+	            android:id="@+id/help"
+	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:gravity="center_horizontal"
-	            android:text="@string/header_adage1"
-	            android:textColor="@color/silver"
-	            android:textSize="26sp" />
-	
-	        <TextView
-	            android:layout_width="fill_parent"
+	            android:padding="5dp"
+	            android:src="@drawable/help"
+	            android:background="@null"
+	            />
+	            
+	        <!-- <TextView
+                android:id="@+id/help"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:clickable="true"
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:paddingLeft="5dp"
+                android:text=""
+                android:textSize="26sp"
+                android:background="@drawable/help"
+                /> -->
+
+	        <ViewFlipper
+		        android:id="@+id/head_flipper"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:flipInterval="5000" >
+		
+		        <TextView
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:gravity="center_horizontal"
+		            android:text="@string/header_adage1"
+		            android:textColor="@color/silver"
+		            android:textSize="26sp" />
+		
+		        <TextView
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:gravity="center_horizontal"
+		            android:text="@string/header_adage2"
+		            android:textColor="@color/silver"
+		            android:textSize="26sp" />
+		
+		        <TextView
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:gravity="center_horizontal"
+		            android:text="@string/header_adage3"
+		            android:textColor="@color/silver"
+		            android:textSize="26sp" />
+		
+		        <TextView
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:gravity="center_horizontal"
+		            android:text="@string/header_adage4"
+		            android:textColor="@color/silver"
+		            android:textSize="26sp" />
+	    	</ViewFlipper>
+	    	
+	        <ImageButton 
+	            android:id="@+id/exit"
+	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:gravity="center_horizontal"
-	            android:text="@string/header_adage2"
-	            android:textColor="@color/silver"
-	            android:textSize="26sp" />
-	
-	        <TextView
-	            android:layout_width="fill_parent"
-	            android:layout_height="wrap_content"
-	            android:gravity="center_horizontal"
-	            android:text="@string/header_adage3"
-	            android:textColor="@color/silver"
-	            android:textSize="26sp" />
-	
-	        <TextView
-	            android:layout_width="fill_parent"
-	            android:layout_height="wrap_content"
-	            android:gravity="center_horizontal"
-	            android:text="@string/header_adage4"
-	            android:textColor="@color/silver"
-	            android:textSize="26sp" />
-    	</ViewFlipper>
+	            android:padding="5dp"
+	            android:src="@drawable/exit"
+	            android:background="@null"
+	            />
+	    	
+        </LinearLayout>
 
         <TabWidget
             android:id="@android:id/tabs"

@@ -127,7 +127,7 @@ public class HelpScrollLayout extends ViewGroup {
 
 		switch (action) {
 		case MotionEvent.ACTION_DOWN:
-			Log.i("", "onTouchEvent  ACTION_DOWN");
+//			Log.i("", "onTouchEvent  ACTION_DOWN");
 			if (mVelocityTracker == null) {
 				mVelocityTracker = VelocityTracker.obtain();
 				mVelocityTracker.addMovement(event);
@@ -158,12 +158,12 @@ public class HelpScrollLayout extends ViewGroup {
 			}
 			if (velocityX > SNAP_VELOCITY && mCurScreen > 0) {
 				// Fling enough to move left
-				Log.e(TAG, "snap left");
+//				Log.e(TAG, "snap left");
 				snapToScreen(mCurScreen - 1);
 			} else if (velocityX < -SNAP_VELOCITY
 					&& mCurScreen < getChildCount() - 1) {
 				// Fling enough to move right
-				Log.e(TAG, "snap right");
+//				Log.e(TAG, "snap right");
 				snapToScreen(mCurScreen + 1);
 			} else {
 				snapToDestination();

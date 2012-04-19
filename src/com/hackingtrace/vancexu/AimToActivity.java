@@ -10,8 +10,10 @@ import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TabHost.OnTabChangeListener;
@@ -21,13 +23,19 @@ import android.widget.ViewFlipper;
 
 import com.hackingtrace.vancexu.aim.AimToAimActivity;
 import com.hackingtrace.vancexu.chart.ChartActivity;
+import com.hackingtrace.vancexu.help.AimToHelpActivity;
 import com.hackingtrace.vancexu.note.AimToNoteActivity;
 import com.hackingtrace.vancexu.task.AimToTaskActivity;
 
 public class AimToActivity extends TabActivity {
+	private static final String TAG = "AimTo";
+	
 	private TabHost mTabHost;
 	private ViewFlipper mFlipper; // slogan animation
-
+	
+	private ImageButton helpBtn;
+	private ImageButton exitBtn;
+	
 	private static final int SWIPE_MIN_DISTANCE = 180; // conflict with chart
 														// gesture
 	private static final int SWIPE_MAX_OFF_PATH = 250;
@@ -100,31 +108,47 @@ public class AimToActivity extends TabActivity {
 			public void onTabChanged(String tabId) {
 				// TODO Auto-generated method stub
 //				viewFlipperBody = (ViewFlipper) mTabHost.getTabContentView();
+//				int a = viewFlipperBody.getChildCount();
+//				Log.d(TAG, ""+a);
 				currentView = mTabHost.getCurrentTab();
 //				Log.d("Tab position", "" + currentView + " " + currentPosition);
 				viewFlipperBody.setDisplayedChild(currentView);
-				/*int times = currentView - currentPosition;
+				int times = currentView - currentPosition;
 				if (times > 0) {
 					viewFlipperBody.setInAnimation(slideLeftIn);
 					viewFlipperBody.setOutAnimation(slideLeftOut);
 					viewFlipperBody.setDisplayedChild(currentView);
-					
-					 * for(int i=0; i<times; ++i) { viewFlipper.showNext(); }
 					 
 				}
 				if (times < 0) {
 					viewFlipperBody.setInAnimation(slideRightIn);
 					viewFlipperBody.setOutAnimation(slideRightOut);
 					viewFlipperBody.setDisplayedChild(currentView);
-					
-					 * times = (-1) * times; for(int i=0; i<times; ++i) {
-					 * viewFlipper.showPrevious(); }
-					 
 				}
-				currentPosition = currentView;*/
+				currentPosition = currentView;
 			}
 		});
+		
+		helpBtn = (ImageButton) findViewById(R.id.help);
+		exitBtn = (ImageButton) findViewById(R.id.exit);
 
+		helpBtn.setOnClickListener(new OnClickListener() {
+			
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent();
+				intent.setClass(v.getContext(), AimToHelpActivity.class);
+				startActivity(intent);
+			}
+		});
+		
+		exitBtn.setOnClickListener(new OnClickListener() {
+			
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				finish();
+			}
+		});
 	}
 
 	private void setupTab(final View view, final String tag, final Intent i) {
